@@ -1,0 +1,13 @@
+{
+  "name": "ArtSkills codestyle checker",
+  "require": {
+    "php": ">=5.6.0",
+    "phpunit/phpunit": "5.*",
+    "phpmd/phpmd": "@stable"
+  },
+  "autoload": {
+    "psr-4": {
+      "Codestyle\\": "src"
+    }
+  }
+}
