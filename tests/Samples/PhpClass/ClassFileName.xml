@@ -10,7 +10,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Класс "{0}" находится в файле с другим названием.'
-		  class="Codestyle\PhpClass\ClassFileName"
+		  class="ArtSkills\CodeStyle\PhpClass\ClassFileName"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>

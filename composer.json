@@ -7,7 +7,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Codestyle\\": "src"
+      "ArtSkills\\CodeStyle\\": "src"
     }
   }
 }

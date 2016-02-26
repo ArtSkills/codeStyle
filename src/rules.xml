@@ -10,7 +10,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Метод "{0}" не CamelCase.'
-		  class="Codestyle\Method\CamelCaseMethodName"
+		  class="ArtSkills\CodeStyle\Method\CamelCaseMethodName"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>
@@ -18,7 +18,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Публичные обычные и абстрактные методы запрещены: "{0}".'
-		  class="Codestyle\Method\DeprecateMethodMix"
+		  class="ArtSkills\CodeStyle\Method\DeprecateMethodMix"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>
@@ -26,7 +26,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Для методов обязателен PHPDoc комментарий: "{0}".'
-		  class="Codestyle\Method\MethodDocComment"
+		  class="ArtSkills\CodeStyle\Method\MethodDocComment"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>
@@ -34,7 +34,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Свойство "{0}" не camelCase.'
-		  class="Codestyle\Property\CamelCasePropertyName"
+		  class="ArtSkills\CodeStyle\Property\CamelCasePropertyName"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>
@@ -42,7 +42,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Публичные свойства запрещены: "{0}".'
-		  class="Codestyle\Property\DeprecatePublicProperty"
+		  class="ArtSkills\CodeStyle\Property\DeprecatePublicProperty"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>
@@ -50,7 +50,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Для свойств обязателен PHPDoc комментарий: "{0}".'
-		  class="Codestyle\Property\PropertyDocComment"
+		  class="ArtSkills\CodeStyle\Property\PropertyDocComment"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>
@@ -58,7 +58,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Отсутствует инициализация свойства: "{0}".'
-		  class="Codestyle\Property\PropertyInitialize"
+		  class="ArtSkills\CodeStyle\Property\PropertyInitialize"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>
@@ -66,7 +66,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Для функций обязателен PHPDoc комментарий: "{0}".'
-		  class="Codestyle\PhpFunction\FunctionDocComment"
+		  class="ArtSkills\CodeStyle\PhpFunction\FunctionDocComment"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>
@@ -74,7 +74,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Переменная "{0}" не camelCase.'
-		  class="Codestyle\Variable\CamelCaseVariableName"
+		  class="ArtSkills\CodeStyle\Variable\CamelCaseVariableName"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>
@@ -82,7 +82,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Глобальные пременные запрещены: "{0}".'
-		  class="Codestyle\Variable\DeprecateGlobalVariable"
+		  class="ArtSkills\CodeStyle\Variable\DeprecateGlobalVariable"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>
@@ -90,7 +90,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Класс "{0}" находится в файле с другим названием.'
-		  class="Codestyle\PhpClass\ClassFileName"
+		  class="ArtSkills\CodeStyle\PhpClass\ClassFileName"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>
@@ -98,7 +98,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Константа "{0}" - недопустимые символы (A-Z_).'
-		  class="Codestyle\PhpClass\UpperCaseConstantName"
+		  class="ArtSkills\CodeStyle\PhpClass\UpperCaseConstantName"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>

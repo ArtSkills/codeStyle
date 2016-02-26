@@ -10,7 +10,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Переменная "{0}" не CamelCase.'
-		  class="Codestyle\Variable\CamelCaseVariableName"
+		  class="ArtSkills\CodeStyle\Variable\CamelCaseVariableName"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>

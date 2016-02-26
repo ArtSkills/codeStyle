@@ -10,7 +10,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Публичные обычные и абстрактные методы запрещены: "{0}".'
-		  class="Codestyle\Method\DeprecateMethodMix"
+		  class="ArtSkills\CodeStyle\Method\DeprecateMethodMix"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>

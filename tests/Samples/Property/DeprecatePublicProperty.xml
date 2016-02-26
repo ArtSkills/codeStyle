@@ -10,7 +10,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Публичные свойства запрещены: "{0}".'
-		  class="Codestyle\Property\DeprecatePublicProperty"
+		  class="ArtSkills\CodeStyle\Property\DeprecatePublicProperty"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>

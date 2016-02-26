@@ -1,8 +1,8 @@
 <?php
-namespace Codestyle\Method;
+namespace ArtSkills\CodeStyle\Method;
 
-use \PHPMD\AbstractNode;
-use Codestyle\MethodRuleEntity;
+use PHPMD\AbstractNode;
+use ArtSkills\CodeStyle\MethodRuleEntity;
 
 class MethodDocComment extends MethodRuleEntity
 {

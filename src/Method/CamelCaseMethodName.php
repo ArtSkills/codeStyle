@@ -1,8 +1,8 @@
 <?php
-namespace Codestyle\Method;
+namespace ArtSkills\CodeStyle\Method;
 
 use \PHPMD\AbstractNode;
-use Codestyle\MethodRuleEntity;
+use ArtSkills\CodeStyle\MethodRuleEntity;
 
 class CamelCaseMethodName extends MethodRuleEntity
 {

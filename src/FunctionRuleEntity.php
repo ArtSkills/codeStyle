@@ -1,5 +1,5 @@
 <?php
-namespace Codestyle;
+namespace ArtSkills\CodeStyle;
 
 use \PHPMD\AbstractRule;
 use \PHPMD\Rule\FunctionAware;

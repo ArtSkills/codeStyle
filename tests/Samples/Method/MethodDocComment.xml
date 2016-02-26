@@ -10,7 +10,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Для методов обязателен PHPDoc комментарий: "{0}".'
-		  class="Codestyle\Method\MethodDocComment"
+		  class="ArtSkills\CodeStyle\Method\MethodDocComment"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>

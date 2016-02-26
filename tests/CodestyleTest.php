@@ -14,7 +14,7 @@ class CodestyleTest extends PHPUnit_Framework_TestCase
 	private function _executePhpmd($testFile, $testRule) {
 		$curDir = dirname(__FILE__);
 
-		exec($curDir . self::PHPMD_RELATIVE_PATH . 'phpmd ' . $curDir . '/Samples/' . $testFile . ' text ' . $curDir . '/Samples/' . $testRule, $execOutput);
+		exec('"'.$curDir . '/../vendor/bin/phpmd" "' . $curDir . '/Samples/' . $testFile . '" text "' . $curDir . '/Samples/' . $testRule.'"', $execOutput);
 		$outputSize = count($execOutput) - 1;
 		return [
 			'count' => $outputSize < 0 ? 0 : $outputSize,

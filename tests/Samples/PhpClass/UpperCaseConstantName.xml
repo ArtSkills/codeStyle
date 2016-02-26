@@ -10,7 +10,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Константа "{0}" - недопустимые символы (A-Z_).'
-		  class="Codestyle\PhpClass\UpperCaseConstantName"
+		  class="ArtSkills\CodeStyle\PhpClass\UpperCaseConstantName"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>

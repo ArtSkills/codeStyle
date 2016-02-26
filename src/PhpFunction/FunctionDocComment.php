@@ -1,8 +1,8 @@
 <?php
-namespace Codestyle\PhpFunction;
+namespace ArtSkills\CodeStyle\PhpFunction;
 
-use \PHPMD\AbstractNode;
-use Codestyle\FunctionRuleEntity;
+use PHPMD\AbstractNode;
+use ArtSkills\CodeStyle\FunctionRuleEntity;
 
 class FunctionDocComment extends FunctionRuleEntity
 {

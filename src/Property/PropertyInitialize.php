@@ -1,9 +1,9 @@
 <?php
-namespace Codestyle\Property;
+namespace ArtSkills\CodeStyle\Property;
 
-use \PHPMD\AbstractNode;
-use \PDepend\Source\AST\ASTProperty;
-use Codestyle\ClassRuleEntity;
+use PHPMD\AbstractNode;
+use PDepend\Source\AST\ASTProperty;
+use ArtSkills\CodeStyle\ClassRuleEntity;
 
 class PropertyInitialize extends ClassRuleEntity
 {

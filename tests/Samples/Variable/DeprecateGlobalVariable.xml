@@ -10,7 +10,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Глобальные пременные запрещены: "{0}".'
-		  class="Codestyle\Variable\DeprecateGlobalVariable"
+		  class="ArtSkills\CodeStyle\Variable\DeprecateGlobalVariable"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>

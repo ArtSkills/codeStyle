@@ -10,7 +10,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Свойство "{0}" не CamelCase.'
-		  class="Codestyle\Property\CamelCasePropertyName"
+		  class="ArtSkills\CodeStyle\Property\CamelCasePropertyName"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>

@@ -10,7 +10,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Метод "{0}" не CamelCase.'
-		  class="Codestyle\Method\CamelCaseMethodName"
+		  class="ArtSkills\CodeStyle\Method\CamelCaseMethodName"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>

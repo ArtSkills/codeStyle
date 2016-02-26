@@ -1,8 +1,8 @@
 <?php
-namespace Codestyle\Variable;
+namespace ArtSkills\CodeStyle\Variable;
 
 use PHPMD\AbstractNode;
-use Codestyle\VariableRuleEntity;
+use ArtSkills\CodeStyle\VariableRuleEntity;
 
 class DeprecateGlobalVariable extends VariableRuleEntity
 {

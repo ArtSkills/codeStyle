@@ -1,8 +1,8 @@
 <?php
-namespace Codestyle\PhpClass;
+namespace ArtSkills\CodeStyle\PhpClass;
 
-use \PHPMD\AbstractNode;
-use \Codestyle\ClassRuleEntity;
+use PHPMD\AbstractNode;
+use ArtSkills\CodeStyle\ClassRuleEntity;
 
 class ClassFileName extends ClassRuleEntity
 {

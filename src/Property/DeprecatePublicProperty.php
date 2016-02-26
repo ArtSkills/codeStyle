@@ -1,8 +1,8 @@
 <?php
-namespace Codestyle\Property;
+namespace ArtSkills\CodeStyle\Property;
 
 use PHPMD\AbstractNode;
-use Codestyle\ClassRuleEntity;
+use ArtSkills\CodeStyle\ClassRuleEntity;
 
 class DeprecatePublicProperty extends ClassRuleEntity
 {

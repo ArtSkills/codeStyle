@@ -1,9 +1,9 @@
 <?php
-namespace Codestyle\Method;
+namespace ArtSkills\CodeStyle\Method;
 
 use \PHPMD\AbstractNode;
 use \PDepend\Source\AST\ASTMethod;
-use Codestyle\ClassRuleEntity;
+use ArtSkills\CodeStyle\ClassRuleEntity;
 
 
 class DeprecateMethodMix extends ClassRuleEntity

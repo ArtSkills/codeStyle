@@ -10,7 +10,7 @@
 
 	<rule name="FunctionRule"
 		  message = 'Отсутствует инициализация свойства: "{0}".'
-		  class="Codestyle\Property\PropertyInitialize"
+		  class="ArtSkills\CodeStyle\Property\PropertyInitialize"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
 		<priority>1</priority>
