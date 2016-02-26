@@ -7,6 +7,8 @@ namespace Samples\Property;
 class PropertyDocComment
 {
 	/**
+	 * Описание
+	 *
 	 * @var int
 	 */
 	protected $protectedProperty = 0;

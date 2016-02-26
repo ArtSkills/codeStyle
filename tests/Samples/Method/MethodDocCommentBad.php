@@ -14,4 +14,47 @@ class MethodDocCommentBad
 		return $inputArg;
 	}
 
+	/**
+	 * @param string $first
+	 * @param int $second
+	 */
+	public function secondMethod($first, $second) {
+
+	}
+
+	/**
+	 * Описание, но параметров нет
+	 */
+	public function thirdMethod($first, $second) {
+
+	}
+
+	/**
+	 * Количество параметов не совпадают
+	 *
+	 * @param string $first
+	 */
+	public function forthMethod($first, $second) {
+
+	}
+
+	/**
+	 * У одного параметра не указан тип
+	 *
+	 * @param $first
+	 * @param int $second
+	 */
+	public function fifthMethod($first, $second) {
+
+	}
+
+	/**
+	 * Опять же не указан тип, но по-другому
+	 *
+	 * @param string $first
+	 * @param $second урлала траляля
+	 */
+	public function sixthMethod($first, $second) {
+
+	}
 }

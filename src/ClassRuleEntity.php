@@ -1,22 +1,14 @@
 <?php
 namespace ArtSkills\CodeStyle;
 
-use PHPMD\AbstractNode;
 use PHPMD\AbstractRule;
 use PHPMD\Rule\ClassAware;
 use PDepend\Source\AST\ASTProperty;
 
-class ClassRuleEntity extends AbstractRule implements ClassAware
+abstract class ClassRuleEntity extends AbstractRule implements ClassAware
 {
 	const PHPDOC_PROPERTY_TYPE_EXPRESSION = '/\@var\s([a-zA-Z0-9\\\]+)/'; // описание типа к комментарию свойсва
 	const CAKEPHP_OBJECT_NAME_EXPRESSION = '/^\$[A-Z][a-zA-Z]+$/'; // именование объектов CakePHP
-
-	/**
-	 * @inheritdoc
-	 */
-	public function apply(AbstractNode $node) {
-		// noop
-	}
 
 	/**
 	 * Выцепляем из PHPDoc комментария тип переменной

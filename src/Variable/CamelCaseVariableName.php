@@ -8,16 +8,9 @@ use PDepend\Source\AST\ASTParameter;
 class CamelCaseVariableName extends VariableRuleEntity
 {
 	/**
-	 * Список уже прошедших проверку переменных
-	 *
 	 * @var array
 	 */
-	private static $_testedVariableList = [];
-
-	/**
-	 * @var array
-	 */
-	private $exceptions = [
+	private $_exceptions = [
 		'$php_errormsg',
 		'$http_response_header',
 		'$GLOBALS',
@@ -73,12 +66,8 @@ class CamelCaseVariableName extends VariableRuleEntity
 	 * @return bool|int
 	 */
 	private function _checkVariable($variableName, \PDepend\Source\AST\ASTNode $parentNode = null) {
-		if (in_array($variableName, $this->exceptions)) {
+		if (in_array($variableName, $this->_exceptions)) {
 			return true;
-		}
-
-		if (isset(self::$_testedVariableList[$variableName])) {
-			return self::$_testedVariableList[$variableName];
 		}
 
 		$localVarExpression = '/^\$[a-z][a-zA-Z]*$/';
@@ -95,7 +84,6 @@ class CamelCaseVariableName extends VariableRuleEntity
 		}
 
 		$result = preg_match($exp, $variableName);
-		self::$_testedVariableList[$variableName] = $result;
 		return $result;
 	}
 }

@@ -1,15 +1,9 @@
 <?php
 namespace ArtSkills\CodeStyle;
 
-use \PHPMD\AbstractRule;
 use \PHPMD\Rule\MethodAware;
-use \PHPMD\AbstractNode;
-class MethodRuleEntity extends AbstractRule implements MethodAware
+
+abstract class MethodRuleEntity extends CallableRuleEntity implements MethodAware
 {
-	/**
-	 * @inheritdoc
-	 */
-	public function apply(AbstractNode $node) {
-		// noop
-	}
+
 }

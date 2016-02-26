@@ -1,9 +1,9 @@
 <?php
 namespace ArtSkills\CodeStyle\Property;
 
-use PHPMD\AbstractNode;
-use PDepend\Source\AST\ASTProperty;
 use ArtSkills\CodeStyle\ClassRuleEntity;
+use PHPMD\AbstractNode;
+use phpDocumentor\Reflection\DocBlock;
 
 class PropertyDocComment extends ClassRuleEntity
 {
@@ -19,17 +19,23 @@ class PropertyDocComment extends ClassRuleEntity
 			$variableDeclarators = $fieldDeclaration->findChildrenOfType('VariableDeclarator');
 			foreach ($variableDeclarators as $variableDeclarator) {
 				$property = $this->createPropertyFromDeclarator($variableDeclarator, $fieldDeclaration, $node);
-				$propertyComment = $property->getDocComment();
+				$propertyComment = $property->getComment();
+
 				if (!strlen($propertyComment)) {
-					$this->addViolation($node, [$property->getName(),]);
+					$this->addViolation($node, [$property->getName(), 'Он не задан']);
 				} else {
-					if (stristr($propertyComment, '@inheritdoc')) { // не проверяем наследование коммента
+					$docBlock = new DocBlock($propertyComment);
+					if (count($docBlock->getTagsByName('inheritdoc'))) { // не проверяем наследование коммента
 						continue;
 					}
 
-					$propertyType = $this->getPropertyTypeFromComments($propertyComment);
-					if (!strlen($propertyType)) { // комментарий есть, а тип не указан
-						$this->addViolation($variableDeclarator, [$property->getName(),]);
+					if (!strlen($docBlock->getShortDescription())) {
+						$this->addViolation($variableDeclarator, [$property->getName(), 'Нет описания свойства']);
+					}
+
+					$propertyType = $docBlock->getTagsByName('var');
+					if (!count($propertyType)) { // комментарий есть, а тип не указан
+						$this->addViolation($variableDeclarator, [$property->getName(), 'Не указан тип свойства']);
 					}
 				}
 			}

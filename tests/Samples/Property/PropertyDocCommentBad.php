@@ -12,5 +12,13 @@ class PropertyDocCommentBad
 
 	private $_privateProperty = null;
 
+	/**
+	 * @var null
+	 */
 	protected $DsmPreview = null;
+
+	/**
+	 * Без типа
+	 */
+	protected $noType = 0;
 }

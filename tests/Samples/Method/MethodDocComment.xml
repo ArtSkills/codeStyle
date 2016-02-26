@@ -9,7 +9,7 @@
 	<description>Правила кодирования ArtSkills с набором наших особых проверок!</description>
 
 	<rule name="FunctionRule"
-		  message = 'Для методов обязателен PHPDoc комментарий: "{0}".'
+		  message = 'Некорректный PHPDoc комментарий для {0}: {1}.'
 		  class="ArtSkills\CodeStyle\Method\MethodDocComment"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 

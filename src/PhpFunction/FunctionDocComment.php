@@ -3,18 +3,17 @@ namespace ArtSkills\CodeStyle\PhpFunction;
 
 use PHPMD\AbstractNode;
 use ArtSkills\CodeStyle\FunctionRuleEntity;
+use phpDocumentor\Reflection\DocBlock;
 
 class FunctionDocComment extends FunctionRuleEntity
 {
 	/**
 	 * Проверка на обязательное наличие комментариев к функциям
 	 *
-	 * @param \PHPMD\AbstractNode $node
+	 * @param AbstractNode $node
 	 * @return void
 	 */
 	public function apply(AbstractNode $node) {
-		if (!strlen($node->getDocComment())) {
-			$this->addViolation($node, [$node->getName(),]);
-		}
+		$this->checkDocComment($node);
 	}
 }

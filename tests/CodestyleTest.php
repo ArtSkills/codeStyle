@@ -67,7 +67,7 @@ class CodestyleTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(0, $res['count'], 'Ошибки при проверке комментария к методу: ' . var_export($res['messages'], true));
 
 		$res = $this->_executePhpmd('Method/MethodDocCommentBad.php', 'Method/MethodDocComment.xml');
-		$this->assertEquals(2, $res['count'], 'Ошибки при проверке некорректного комментария к методу: ' . var_export($res['messages'], true));
+		$this->assertEquals(7, $res['count'], 'Ошибки при проверке некорректного комментария к методу: ' . var_export($res['messages'], true));
 	}
 
 	public function testPropertyDoc() {
@@ -75,7 +75,7 @@ class CodestyleTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(0, $res['count'], 'Ошибки при проверке комментария к свойству: ' . var_export($res['messages'], true));
 
 		$res = $this->_executePhpmd('Property/PropertyDocCommentBad.php', 'Property/PropertyDocComment.xml');
-		$this->assertEquals(3, $res['count'], 'Ошибки при проверке некорректного комментария к свойству: ' . var_export($res['messages'], true));
+		$this->assertEquals(4, $res['count'], 'Ошибки при проверке некорректного комментария к свойству: ' . var_export($res['messages'], true));
 	}
 
 	public function testFunctionDoc() {
@@ -83,7 +83,7 @@ class CodestyleTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(0, $res['count'], 'Ошибки при проверке комментария к функции: ' . var_export($res['messages'], true));
 
 		$res = $this->_executePhpmd('PhpFunction/FunctionDocCommentBad.php', 'PhpFunction/FunctionDocComment.xml');
-		$this->assertEquals(1, $res['count'], 'Ошибки при проверке некорректного комментария к функции: ' . var_export($res['messages'], true));
+		$this->assertEquals(6, $res['count'], 'Ошибки при проверке некорректного комментария к функции: ' . var_export($res['messages'], true));
 	}
 
 	public function testClassName() {
