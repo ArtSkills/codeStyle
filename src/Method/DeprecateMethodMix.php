@@ -39,8 +39,9 @@ class DeprecateMethodMix extends ClassRuleEntity
 	 * @return void
 	 */
 	public function apply(AbstractNode $node) {
-		$hasPublicStaticMethods = false;
+		$hasStaticMethods = false;
 		$hasPublicMethods = false;
+		/** @noinspection PhpUndefinedMethodInspection */
 		$methods = $node->getNode()->getMethods();
 
 		/**
@@ -53,7 +54,7 @@ class DeprecateMethodMix extends ClassRuleEntity
 
 			if ($method->isPublic()) {
 				if ($method->isStatic()) {
-					$hasPublicStaticMethods = true;
+					$hasStaticMethods = true;
 				}
 				else {
 					$hasPublicMethods = true;
@@ -61,7 +62,7 @@ class DeprecateMethodMix extends ClassRuleEntity
 			}
 		}
 
-		if ($hasPublicStaticMethods && $hasPublicMethods) {
+		if ($hasStaticMethods && $hasPublicMethods) {
 			$this->addViolation($node, [$node->getName(),]);
 		}
 	}

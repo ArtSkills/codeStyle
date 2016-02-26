@@ -39,6 +39,7 @@ class CamelCaseMethodName extends MethodRuleEntity
 	public function apply(AbstractNode $node) {
 		$methodName = $node->getName();
 		if (!in_array($methodName, $this->_ignoredMethods)) {
+			/** @noinspection PhpUndefinedMethodInspection */
 			$isPrivate = $node->isPrivate();
 			if ($isPrivate) {
 				$exp = '/^\_[a-z][a-zA-Z]*$/';

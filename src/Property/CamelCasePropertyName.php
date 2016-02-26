@@ -15,6 +15,7 @@ final class CamelCasePropertyName extends ClassRuleEntity
 	public function apply(AbstractNode $node) {
 		$fieldDeclarations = $node->findChildrenOfType('FieldDeclaration');
 		foreach ($fieldDeclarations as $fieldDeclaration) {
+			/** @noinspection PhpUndefinedMethodInspection */
 			$isPrivate = $fieldDeclaration->isPrivate();
 			$variableDeclarators = $fieldDeclaration->findChildrenOfType('VariableDeclarator');
 			foreach ($variableDeclarators as $variableDeclarator) {

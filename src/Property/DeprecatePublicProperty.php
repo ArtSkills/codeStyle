@@ -6,6 +6,11 @@ use ArtSkills\CodeStyle\ClassRuleEntity;
 
 class DeprecatePublicProperty extends ClassRuleEntity
 {
+	/**
+	 * Список исключений
+	 *
+	 * @var array
+	 */
 	private $_exceptions = [
 		'$uses',
 		'$helpers',
@@ -26,6 +31,7 @@ class DeprecatePublicProperty extends ClassRuleEntity
 		$fieldDeclarations = $node->findChildrenOfType('FieldDeclaration');
 		foreach ($fieldDeclarations as $fieldDeclaration) {
 			$variableDeclarators = $fieldDeclaration->findChildrenOfType('VariableDeclarator');
+			/** @noinspection PhpUndefinedMethodInspection */
 			$isPublic = $fieldDeclaration->isPublic();
 			foreach ($variableDeclarators as $variableDeclarator) {
 				$propertyName = $variableDeclarator->getName();

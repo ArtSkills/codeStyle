@@ -2,8 +2,12 @@
 namespace ArtSkills\CodeStyle;
 
 use PHPMD\AbstractRule;
+use PHPMD\Node\ClassNode;
 use PHPMD\Rule\ClassAware;
 use PDepend\Source\AST\ASTProperty;
+use PDepend\Source\AST\ASTFieldDeclaration;
+use PDepend\Source\AST\ASTVariableDeclarator;
+use PDepend\Source\AST\ASTClass;
 
 abstract class ClassRuleEntity extends AbstractRule implements ClassAware
 {
@@ -55,7 +59,7 @@ abstract class ClassRuleEntity extends AbstractRule implements ClassAware
 			return false;
 		}
 
-		$className = $this->getPropertyTypeFromComments($property->getDocComment());
+		$className = $this->getPropertyTypeFromComments($property->getComment());
 		if (strlen($className)) {
 			if (strstr($className, "\\")) {
 				$stringArr = explode("\\", $className);
@@ -78,8 +82,23 @@ abstract class ClassRuleEntity extends AbstractRule implements ClassAware
 	 * @return ASTProperty
 	 */
 	protected function createPropertyFromDeclarator($variableDeclarator, $fieldDeclaration, $class) {
-		$property = new ASTProperty($fieldDeclaration->getNode(), $variableDeclarator->getNode());
-		$property->setDeclaringClass($class->getNode());
+		/**
+		 * @var ASTFieldDeclaration $fieldNode
+		 * @var ClassNode $class
+		 */
+		$fieldNode = $fieldDeclaration->getNode();
+		/**
+		 * @var ASTVariableDeclarator $variableNode
+		 */
+		$variableNode = $variableDeclarator->getNode();
+		$property = new ASTProperty($fieldNode, $variableNode);
+
+		/**
+		 * @var $classNode ASTClass
+		 */
+		$classNode = $class->getNode();
+		$property->setDeclaringClass($classNode);
+		/** @noinspection PhpUndefinedMethodInspection */
 		$property->setCompilationUnit($class->getCompilationUnit());
 		return $property;
 	}
