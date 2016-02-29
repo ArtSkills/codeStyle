@@ -19,6 +19,7 @@ class DeprecatePublicProperty extends ClassRuleEntity
 		'$useDbConfig',
 		'$records',
 		'$import',
+		'$fixtures',
 	];
 
 	/**

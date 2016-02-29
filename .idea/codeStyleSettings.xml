@@ -25,6 +25,9 @@
         <JSCodeStyleSettings>
           <option name="ALIGN_MULTILINE_VAR_DECLARATION" value="true" />
         </JSCodeStyleSettings>
+        <MultiMarkdownCodeStyleSettings>
+          <option name="RIGHT_MARGIN" value="72" />
+        </MultiMarkdownCodeStyleSettings>
         <PHPCodeStyleSettings>
           <option name="COMMA_AFTER_LAST_ARRAY_ELEMENT" value="true" />
           <option name="PHPDOC_BLANK_LINE_BEFORE_TAGS" value="true" />

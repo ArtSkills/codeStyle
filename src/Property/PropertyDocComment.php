@@ -22,7 +22,7 @@ class PropertyDocComment extends ClassRuleEntity
 				$propertyComment = $property->getComment();
 
 				if (!strlen($propertyComment)) {
-					$this->addViolation($node, [$property->getName(), 'Он не задан']);
+					$this->addViolation($variableDeclarator, [$property->getName(), 'Он не задан']);
 				} else {
 					$docBlock = new DocBlock($propertyComment);
 					if (count($docBlock->getTagsByName('inheritdoc'))) { // не проверяем наследование коммента
