@@ -3,8 +3,8 @@
 
 Установка
 ---------
-
-`php composer.phar self-update && php composer.phar install`
+Заходим в корень ветки и запускаем:
+`php install.php`
 
 Настройка PhpStorm
 ------------------
