@@ -10,5 +10,5 @@
 ------------------
 
 * Languages & Frameworks -> PHP - настраиваем PHP Interpreter (локальный)
-* Languages & Frameworks -> PHP -> Mess Detector -> Configuration "Local" - указываем путь к phpdm: "vendor/bin/phpmd"
+* Languages & Frameworks -> PHP -> Mess Detector -> Configuration "Local" - указываем путь к phpdm: "vendor/bin/phpmd", ставим таймаут 10 секунд
 * Editor -> Inspections -> PHP Mess Detector Validation - активируем, снимаем все галки и подключаем custom rulesets: "src/rules.xml"
