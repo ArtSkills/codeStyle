@@ -97,7 +97,7 @@
 	</rule>
 
 	<rule name="FunctionRule"
-		  message = 'Константа {0} - недопустимые символы (A-Z_).'
+		  message = 'Константа {0} - недопустимые символы (A-Z_0-9).'
 		  class="ArtSkills\CodeStyle\PhpClass\UpperCaseConstantName"
 		  externalInfoUrl="http://artskills.ru/phpmd/rules.html#functionrule">
 
@@ -107,6 +107,7 @@
 	<rule ref="rulesets/codesize.xml">
 		<exclude name="ExcessiveClassLength" />
 		<exclude name="CyclomaticComplexity" />
+		<exclude name="ExcessiveClassComplexity" />
 	</rule>
 
 	<rule ref="rulesets/codesize.xml/ExcessiveClassLength">

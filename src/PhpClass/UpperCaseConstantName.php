@@ -17,7 +17,7 @@ class UpperCaseConstantName extends ClassRuleEntity
 		foreach ($node->findChildrenOfType('ConstantDeclarator') as $constant) {
 			$constantName = $constant->getImage();
 
-			if (!preg_match('/^[A-Z][A-Z\_]+$/', $constantName)) {
+			if (!preg_match('/^[A-Z][A-Z\_0-9]+$/', $constantName)) {
 				$this->addViolation($constant, [$constantName]);
 			}
 		}
