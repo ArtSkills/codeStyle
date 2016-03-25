@@ -13,7 +13,7 @@ class ClassFileName extends ClassRuleEntity
 	 * @return void
 	 */
 	public function apply(AbstractNode $node) {
-		$fNameArr = explode('/', $node->getFileName());
+		$fNameArr = explode(DIRECTORY_SEPARATOR, $node->getFileName());
 		if ($node->getName() . '.php' != $fNameArr[count($fNameArr) - 1]) {
 			$this->addViolation($node, [$node->getName(),]);
 		}
