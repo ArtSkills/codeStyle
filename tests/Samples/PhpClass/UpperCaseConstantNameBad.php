@@ -8,6 +8,4 @@ class UpperCaseConstantNameBad
 	const badConstant = 1;
 
 	const _BAD_CONSTANT = 2;
-
-	const BAD_CONSTANT3 = 3;
 }

@@ -15,6 +15,6 @@ class ClassTest extends AppTest
 		$this->assertEquals(0, $res['count'], 'Ошибки при проверке имени константы: ' . var_export($res['messages'], true));
 
 		$res = $this->executePhpmd('PhpClass/UpperCaseConstantNameBad.php', 'PhpClass/UpperCaseConstantName.xml');
-		$this->assertEquals(3, $res['count'], 'Ошибки при проверке некорректного имени констант: ' . var_export($res['messages'], true));
+		$this->assertEquals(2, $res['count'], 'Ошибки при проверке некорректного имени констант: ' . var_export($res['messages'], true));
 	}
 }

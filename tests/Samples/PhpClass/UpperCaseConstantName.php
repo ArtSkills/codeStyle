@@ -7,4 +7,6 @@ class UpperCaseConstantName
 {
 	const CONSTANT = 2;
 	const GOOD_CONSTANT = 1;
+	
+	const GOOD_CONSTANT3 = 3;
 }
