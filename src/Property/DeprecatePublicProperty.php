@@ -21,7 +21,7 @@ class DeprecatePublicProperty extends ClassRuleEntity
 		'$import',
 		'$fixtures',
 		'$paginate',
-		'hasMany',
+		'$hasMany',
 	];
 
 	/**
