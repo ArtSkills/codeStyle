@@ -16,15 +16,15 @@ final class CamelCasePropertyName extends ClassRuleEntity
 		$fieldDeclarations = $node->findChildrenOfType('FieldDeclaration');
 		foreach ($fieldDeclarations as $fieldDeclaration) {
 			/** @noinspection PhpUndefinedMethodInspection */
-			$isPrivate = $fieldDeclaration->isPrivate();
+			$isPublic = $fieldDeclaration->isPublic();
 			$variableDeclarators = $fieldDeclaration->findChildrenOfType('VariableDeclarator');
 			foreach ($variableDeclarators as $variableDeclarator) {
 				$propertyName = $variableDeclarator->getName();
 
-				if ($isPrivate) {
-					$pattern = '/^\$\_[a-z][a-zA-Z]*$/';
-				} else {
+				if ($isPublic) {
 					$pattern = '/^\$[a-z][a-zA-Z]*$/';
+				} else {
+					$pattern = '/^\$\_[a-z][a-zA-Z]*$/';
 				}
 
 				if (!preg_match($pattern, $propertyName)) {

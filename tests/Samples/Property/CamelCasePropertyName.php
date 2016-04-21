@@ -5,9 +5,9 @@
 namespace Samples\Property;
 class CamelCasePropertyName
 {
-	protected $protectedProperty = 0;
+	protected $_protectedProperty = 0;
 
-	protected $anotherProtectedProperty = [];
+	protected $_anotherProtectedProperty = [];
 
 	private $_privateProperty = null;
 
@@ -16,13 +16,13 @@ class CamelCasePropertyName
 	/**
 	 * @var DsmPreview
 	 */
-	protected $DsmPreview = null;
+	public $DsmPreview = null;
 
 	/**
 	 * CakePHP 3
 	 *
 	 * @var \App\Model\CatalogItemTable
 	 */
-	protected $CatalogItem = null;
+	public $CatalogItem = null;
 
 }

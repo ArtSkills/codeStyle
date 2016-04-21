@@ -40,12 +40,11 @@ class CamelCaseMethodName extends MethodRuleEntity
 		$methodName = $node->getName();
 		if (!in_array($methodName, $this->_ignoredMethods)) {
 			/** @noinspection PhpUndefinedMethodInspection */
-			$isPrivate = $node->isPrivate();
-			if ($isPrivate) {
-				$exp = '/^\_[a-z][a-zA-Z]*$/';
-
-			} else {
+			$isPublic = $node->isPublic();
+			if ($isPublic) {
 				$exp = '/^[a-z][a-zA-Z]+$/';
+			} else {
+				$exp = '/^\_[a-z][a-zA-Z]*$/';
 			}
 
 			if (!preg_match($exp, $methodName)) {

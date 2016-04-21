@@ -9,7 +9,7 @@ class CamelCaseMethodName
 
 	}
 
-	protected function doProtectedTest() {
+	protected function _doProtectedTest() {
 		$this->_doPrivateTest();
 	}
 
