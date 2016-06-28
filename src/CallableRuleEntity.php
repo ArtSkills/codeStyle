@@ -4,6 +4,7 @@ namespace ArtSkills\CodeStyle;
 use PHPMD\AbstractRule;
 use PHPMD\AbstractNode;
 use phpDocumentor\Reflection\DocBlock;
+use phpDocumentor\Reflection\DocBlockFactory;
 
 abstract class CallableRuleEntity extends AbstractRule
 {
@@ -19,12 +20,13 @@ abstract class CallableRuleEntity extends AbstractRule
 		if (!strlen($functionComment)) {
 			$this->addViolation($node, [$node->getName(), 'Он не указан']);
 		} else {
-			$docBlock = new DocBlock($functionComment);
+			$docBlock = DocBlockFactory::createInstance()->create($functionComment);
+
 			if (count($docBlock->getTagsByName('inheritdoc'))) { // не проверяем наследование коммента
 				return;
 			}
 
-			if (!strlen($docBlock->getShortDescription())) {
+			if (!strlen($docBlock->getSummary())) {
 				$this->addViolation($node, [
 					$node->getName(),
 					'Нет описания',
@@ -62,11 +64,13 @@ abstract class CallableRuleEntity extends AbstractRule
 			}
 
 			foreach ($paramTags as $tag) {
-				$contList = explode(' ', $tag->getContent());
-				if (count($contList) < 2 || (substr($contList[1], 0, 1) !== '$')) {
+				/**
+				 * @var \phpDocumentor\Reflection\DocBlock\Tags\Param $tag
+				 */
+				if (!$tag->getType()) {
 					$this->addViolation($node, [
 						$node->getName(),
-						'Некорректно указан параметр "' . $tag->getContent() . '"',
+						'Некорректно указан параметр "' . $tag->getVariableName() . '"',
 					]);
 					return;
 				}

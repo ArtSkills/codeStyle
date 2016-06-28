@@ -4,6 +4,7 @@ namespace ArtSkills\CodeStyle\Property;
 use ArtSkills\CodeStyle\ClassRuleEntity;
 use PHPMD\AbstractNode;
 use phpDocumentor\Reflection\DocBlock;
+use phpDocumentor\Reflection\DocBlockFactory;
 
 class PropertyDocComment extends ClassRuleEntity
 {
@@ -24,12 +25,12 @@ class PropertyDocComment extends ClassRuleEntity
 				if (!strlen($propertyComment)) {
 					$this->addViolation($variableDeclarator, [$property->getName(), 'Он не задан']);
 				} else {
-					$docBlock = new DocBlock($propertyComment);
+					$docBlock = DocBlockFactory::createInstance()->create($propertyComment);
 					if (count($docBlock->getTagsByName('inheritdoc'))) { // не проверяем наследование коммента
 						continue;
 					}
 
-					if (!strlen($docBlock->getShortDescription())) {
+					if (!strlen($docBlock->getSummary())) {
 						$this->addViolation($variableDeclarator, [$property->getName(), 'Нет описания свойства']);
 					}
 
