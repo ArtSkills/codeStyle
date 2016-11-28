@@ -12,12 +12,21 @@ abstract class AppTest extends \PHPUnit_Framework_TestCase
 	 * @return array ['count' => <кол-во сообщений>, 'messages' => <массив строк результата от phpmd>]
 	 */
 	protected function executePhpmd($testFile, $testRule) {
-		$curDir = dirname(__FILE__);
+		$curDir = __DIR__;
+		exec('"' . $curDir . '/../vendor/bin/phpmd" "' . $curDir . '/Samples/' . $testFile . '" xml "' . $curDir . '/Samples/' . $testRule . '"', $execOutput);
 
-		exec('"' . $curDir . '/../vendor/bin/phpmd" "' . $curDir . '/Samples/' . $testFile . '" text "' . $curDir . '/Samples/' . $testRule . '"', $execOutput);
-		$outputSize = count($execOutput) - 1;
+		$xml = simplexml_load_string(implode("\n", $execOutput));
+		$messages = [];
+		if (!empty($xml->file)) {
+			foreach ($xml->file as $xmlFile) {
+				foreach ($xmlFile->violation as $errorMessage) {
+					$messages[] = (string)$errorMessage;
+				}
+			}
+		}
+
 		return [
-			'count' => $outputSize < 0 ? 0 : $outputSize,
+			'count' => count($messages),
 			'messages' => $execOutput,
 		];
 	}
