@@ -1,5 +1,5 @@
 {
-  "name": "ArtSkills codestyle checker",
+  "name": "artskills/codestyle",
   "require": {
     "php": ">=5.6.0",
     "phpdocumentor/reflection-docblock": "@stable",
